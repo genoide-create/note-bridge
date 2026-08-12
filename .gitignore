@@ -1,0 +1,22 @@
+.DS_Store
+__pycache__/
+*.pyc
+
+# Local secrets and state
+.env
+*.env
+.plaud_sync_state.json
+tokens-mcp.json
+
+# Logs
+logs/
+*.log
+
+# Build outputs
+*.app/
+dist/
+*.zip
+
+# Local generated files
+converted/
+note-bridge-github/
