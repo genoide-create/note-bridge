@@ -41,6 +41,16 @@ Plaud 녹음
   -> Notion API로 데이터베이스에 저장
 ```
 
+```mermaid
+flowchart LR
+    A[Plaud 녹음] --> B[Plaud MCP]
+    B --> C[전사본 가져오기]
+    C --> D[AI 또는 규칙 기반 분석]
+    D --> E[분류 / 분할 / 병합]
+    E --> F[요약과 메타데이터 생성]
+    F --> G[Notion DB 저장]
+```
+
 ## 사용 기술
 
 - Python
@@ -51,27 +61,11 @@ Plaud 녹음
 - macOS launchd 자동 실행
 - Codex / Claude Code를 활용한 AI 보조 개발
 
-## 화면 구성
+## 소개 페이지
 
-아래 이미지는 포트폴리오/소개용으로 추가할 예정입니다.
+개발 배경, 사용 화면, 작동 방식은 아래 Notion 페이지에 정리했습니다.
 
-1. `docs/images/01-problem.png`  
-   Plaud 녹음이 쌓이지만 정리가 어려운 문제 상황
-
-2. `docs/images/02-goal.png`  
-   긴 녹음이 내용별 데이터로 나뉘어 Notion DB에 들어가는 목표 구조
-
-3. `docs/images/03-development.png`  
-   AI와 함께 기능을 설계하고 테스트한 개발 과정
-
-4. `docs/images/04-settings.png`  
-   Plaud, Notion, AI API, 카테고리, DB 속성 세팅 화면
-
-5. `docs/images/05-main.png`  
-   미전송 전사본 전체 전송, 선택 전송, 최근 Plaud 노트 목록 화면
-
-6. `docs/images/06-notion-result.png`  
-   Notion DB에 분류/요약되어 저장된 결과 화면
+- Notion 소개 페이지: https://ptis.notion.site/Note-Bridge-3b130b2bcddd802db391c938a733676f
 
 ## 실행 방법
 
@@ -136,7 +130,3 @@ cp .env.example .env
 - 사용자는 본인의 Plaud 계정, Notion API 토큰, 선택 사항인 AI API 키를 직접 연결해야 합니다.
 - `.env`, API 키, Plaud 토큰, Notion 토큰, 로그 파일은 GitHub에 올리지 않습니다.
 - 현재 앱 래퍼와 자동 실행은 macOS 기준입니다. 핵심 Python 로직은 Windows용으로도 이식할 수 있습니다.
-
-## 소개 페이지
-
-- Notion 소개 페이지: https://ptis.notion.site/Note-Bridge-3b130b2bcddd802db391c938a733676f
